@@ -33,8 +33,8 @@ share : true
 ※주의 : 절대로 남들에게 알려선 안된다.
 
 ## STEP 5.
-아래와 같이 OAuth2 탭에서 초대코드를 복사한다.
-BOT PERMISSIONS 부분은 본인이 원하는 걸 선택하면 된다.<br>
+아래와 같이 OAuth2 탭에서 초대코드를 복사한다.<br>
+BOT PERMISSIONS 부분은 본인이 원하는 걸 선택하면 된다.
 ![discord OAuth2](/images/discord OAuth2.gif)
 
 
