@@ -37,6 +37,21 @@ share : true
 ![discord OAuth2](/images/discord OAuth2.gif)
 BOT PERMISSIONS 부분은 본인이 원하는 걸 선택하면 된다.
 
+## STEP 6.
+이제 거의 다 했다~~ <br>
+STEP 5 에서 복사한 그 주소를 브라우저 주소창에 붙여넣기한다.
+![discord server](/images/discord server.jpg)
+본인이 봇을 추가하고 싶은 서버를 선택한뒤 계속하기를 누른다.
+봇에게 권한 승인 등을 하고 나면 끝이다.
+
+## 마무리
+![discord bot okok](/images/discord bot okok.jpg)
+위와 같이 떴다면 성공이다. <br>
+한번 본인이 선택한 서버에 들어가본다.
+![discord finally](/images/discor finally.jpg)
+봇이 잘 추가된 모습을 볼 수 있다 ^^
+
+
 --- 
 
 이 문서는 [한글 Lorem Ipsum](http://guny.kr/stuff/klorem/)으로 생성되었습니다.
