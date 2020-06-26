@@ -8,12 +8,12 @@ comments: true
 share : true
 
 ---
-디스코드 봇 만들기
+# 디스코드 봇 만들기
 ## STEP 1.
 
 [디스코드 관리자 포럼](https://discord.com/developers/applications)에 들어간다.
-아무것도 해본적이 없다면 아래와 같이 나올것이다.
-! [디스코드 어플리케이션 X](/images/discord applications X.jpg)
+로그인을 하고 아무것도 없다면 밑에 사진과 같이 나올 것이다.
+![discord applications X](/images/discord applications X.jpg)
 
 --- 
 
