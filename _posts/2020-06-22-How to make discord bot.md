@@ -18,6 +18,8 @@ share : true
 ## STEP 2.
 
 오른쪽 상단에 있는 <mark>New Application</mark>을 누른다.
+![discord new application](/images/discord new application.jpg)<br>
+본인이 원하는 봇 이름을 적은 뒤에 <mark>create</mark>를 누른다.
 
 --- 
 
