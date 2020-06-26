@@ -11,8 +11,8 @@ share : true
 # 디스코드 봇 만들기
 ## STEP 1.
 
-[디스코드 관리자 포럼](https://discord.com/developers/applications)에 들어간다.
-로그인을 하고 아무것도 없다면 밑에 사진과 같이 나올 것이다.<br>
+[디스코드 관리자 포럼](https://discord.com/developers/applications)에 들어간다.<br>
+로그인을 하고 아무것도 없다면 밑에 사진과 같이 나올 것이다.
 ![discord applications X](/images/discord applications X.jpg)
 
 ## STEP 2.
@@ -20,6 +20,8 @@ share : true
 오른쪽 상단에 있는 <mark>New Application</mark>을 누른다.
 ![discord new application](/images/discord new application.jpg)<br>
 본인이 원하는 봇 이름을 적은 뒤에 <mark>create</mark>를 누른다.
+
+## STEP 3.
 
 --- 
 
