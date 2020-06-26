@@ -48,7 +48,7 @@ STEP 5 에서 복사한 그 주소를 브라우저 주소창에 붙여넣기한�
 ![discord bot okok](/images/discord bot okok.jpg)
 위와 같이 떴다면 성공이다. <br>
 한번 본인이 선택한 서버에 들어가본다.
-![discord finally](/images/discor finally.jpg)
+![discord finally](/images/discord finally.jpg)
 봇이 잘 추가된 모습을 볼 수 있다 ^^
 
 
