@@ -14,7 +14,7 @@ share: true
 --- 
 
 ## STEP 1. 빠밤
-[지난 글](https://dbrudals.github.io/2020-06-22/How-to-make-discord-bot/){: target을 참고하여 디스코드 봇을 만든다.
+[지난 글](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/)을 참고하여 디스코드 봇을 만든다.
 
 --- 
 
