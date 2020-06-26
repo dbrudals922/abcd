@@ -44,13 +44,15 @@ STEP 5 에서 복사한 그 주소를 브라우저 주소창에 붙여넣기한�
 ![discord server](/images/discord server.jpg)<br>
 본인이 봇을 추가하고 싶은 서버를 선택한뒤 계속하기를 누른다.<br>
 봇에게 권한 승인 등을 하고 나면 끝이다.
-
-## 마무리
+<br>
 ![discord bot okok](/images/discord bot okok.jpg)<br>
 위와 같이 떴다면 성공이다. <br>
 한번 본인이 선택한 서버에 들어가본다.<br>
 ![discord finally](/images/discord finally.jpg)<br>
 봇이 잘 추가된 모습을 볼 수 있다 ^^
+
+
+
 
 
 --- 
