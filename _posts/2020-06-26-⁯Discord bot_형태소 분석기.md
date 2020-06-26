@@ -9,7 +9,7 @@ share: true
 
 ---
 
-이 글은 저번 글 How to make discord bot에 이어서 형태소 분석기로 내 감정을 알려주는 봇을 만들어보겠습니다.
+이 글은 저번 글 How to make discord bot에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만들어보겠습니다.
 
 --- 
 
