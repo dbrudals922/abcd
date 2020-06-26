@@ -12,6 +12,8 @@ share : true
 ## STEP 1.
 
 [디스코드 관리자 포럼](https://discord.com/developers/applications)에 들어간다.
+아무것도 해본적이 없다면 아래와 같이 나올것이다.
+![디스코드 어플리케이션 X]
 
 --- 
 
