@@ -2,7 +2,7 @@
 layout: post
 title: "How to make discord bot"
 description: "디스코드 봇 만들기"
-date: 2020-06-22
+date: 2020-06-26
 tags: [디스코드]
 comments: true
 share : true
