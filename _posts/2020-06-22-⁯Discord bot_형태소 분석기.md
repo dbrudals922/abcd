@@ -3,7 +3,7 @@ layout: post
 title: "Discord bot 형태소 분석기"
 description: "내 감정을 알려주는 디스코드 봇을 만들어보자."
 date: 2017-01-19
-tags: [샘플 포스트, 테스트, 스타일]
+tags: [디스코드]
 comments: true
 share: true
 
