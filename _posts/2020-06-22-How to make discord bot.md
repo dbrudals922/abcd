@@ -29,7 +29,7 @@ share : true
 
 ## STEP 4.
 ![discord token](/images/discord token.jpg)<br>
-빨간 네모 상자를 눌러 어딘가에 고이 모셔놓는다.
+빨간 네모 상자를 눌러 어딘가에 고이 모셔놓는다.<br>
 ※주의 : 절대로 남들에게 알려선 안된다.
 
 ## STEP 5.
