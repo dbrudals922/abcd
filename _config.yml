@@ -62,7 +62,7 @@ nav:
   - name:           "Tags"
     url:            "/tags"
   - name:           "Github"
-    url:            "dbrudals.github.io"
+    url:            "https://github.com/dbrudals/dbrudals.github.com"
 
 # Sass
 sass:
