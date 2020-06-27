@@ -112,15 +112,15 @@ with conn.cursor() as cursor:
 
 <ol>
   
-  <li>봇이 여러개일때 말이 꼬일 수 있으므로 아래와 같은 코드를 넣어준다.<br>
+  <li>봇이 여러개일때 말이 꼬일 수 있으므로 아래와 같은 코드를 넣어준다.</li>
     
 ```
 if message.author.bot:  # 봇이 메세지를 보냈다면..
         return None  # 걍 무시.
 ```
 
-</li>
-  <li> 내가 보낸 말도 형태소 분석을 해준다.<br>
+
+  <li> 내가 보낸 말도 형태소 분석을 해준다.</li>
   
   ```
   if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
@@ -131,8 +131,7 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
         text += pos[i][0] + '+' + pos[i][1] + '/'
   ```
   
-  </li>
-<li> 내가 보낸 메시지와 하나하나 비교하여 맞는 것을 찾은 뒤 숫자에 맞는 기분을 출력한다.<br>
+<li> 내가 보낸 메시지와 하나하나 비교하여 맞는 것을 찾은 뒤 숫자에 맞는 기분을 출력한다.</li>
   
   ```
       for b in result:
@@ -149,8 +148,7 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
                 await message.channel.send('기분이 많이 좋네요')
             break
   ```
-  
-  </li>
+
 
 ## 마지막
 그래서 완성한 코드는
