@@ -26,10 +26,10 @@ from konlpy.tag import Kkma
 
 kkma = Kkma()
 
-conn = pymysql.connect(host='dev-swh.ga',
-                       user="root",
-                       password="swhacademy!",
-                       db="k_min",
+conn = pymysql.connect(host='',
+                       user="",
+                       password="",
+                       db="",
                        charset='utf8')
 
 response2 = requests.get('https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json')
