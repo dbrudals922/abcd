@@ -140,6 +140,7 @@ async def on_message(message):
 print(message)  # 로그 성 출력
 ```
 <ol>
+  
   <li>봇이 여러개일때 말이 꼬일 수 있으므로 아래와 같은 코드를 넣어준다.
     
 ```
