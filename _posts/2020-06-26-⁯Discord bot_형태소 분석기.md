@@ -87,13 +87,11 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(message)  # 로그 성 출력
-
     if message.author.bot:  # 봇이 메세지를 보냈다면..
         return None  # 걍 무시.
-    if message.content.startswith('!안녕'):  # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
-        # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
+    if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
         await message.channel.send('안녕')
-
+        
 client.run(token)
 ```
 token부분에는 How to make discord bot에 고이 모셔두라고 했던 그것을 넣으시면 됩니다.
@@ -111,12 +109,46 @@ with conn.cursor() as cursor:
 <br>
 이제 내가 메세지를 보냈을 때 반응하는 코드를 짜주겠습니다.
 
+<li>봇이 여러 개일때 반응하는 것을 막기 위해 작성한 코드입니다.</li>
 ```
 if message.author.bot:  # 봇이 메세지를 보냈다면..
         return None  # 걍 무시.
 ```
-위 코드는 봇이 여러 개일때 반응하는 것을 막기 위해 작성한 코드입니다.
-<br>
+<li> 테스트 차원으로 아래와 같은 코드를 넣어준다.</li>
+```
+if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+    await message.channel.send('안녕')
+```
+지금 아래의 코드를 실행해서 본인의 봇이 '안녕'이라고 말을 하는지 체크해본다.
+```
+import discord
+
+client = discord.Client()
+
+# 디스코드에서 생성된 토큰을 여기에 추가
+token = ""
+
+# 아래는 봇이 구동되었을 때 동작하는 부분
+@client.event
+async def on_ready():
+    print("Logged in as ")  # 봇의 아이디, 닉네임이 출력
+    print(client.user.name)
+    print(client.user.id)
+
+
+# 봇이 새로운 메시지를 수신했을때 동작하는 부분
+@client.event
+async def on_message(message):
+    print(message)  # 로그 성 출력
+    if message.author.bot:  # 봇이 메세지를 보냈다면..
+        return None  # 걍 무시.
+    if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+        await message.channel.send('안녕')
+        
+client.run(token)
+```
+정상적으로 작동한다면 아래의 방법을 따라가면 된다.
+
 <li>내가 보낸 말을 형태소 분석한다.</li>
   ```
   if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
