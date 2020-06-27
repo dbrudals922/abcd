@@ -42,7 +42,8 @@ async def on_message(message):
         # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
         await message.channel.send('안녕')
 
-client.run(token)```
+client.run(token)
+```
 
 
 --- 
