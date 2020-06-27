@@ -16,7 +16,8 @@ share: true
 
 ## STEP 1. 빠밤
 먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
-아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하시면 돼용~
+아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 된다.
+감정사전에 polarity는 기분이 좋고, 나쁨을 나타낸다. 숫자가 크면 클수록 기분이 좋음을 나타낸다.
 ```
 import pymysql.cursors
 import json
@@ -53,7 +54,7 @@ conn.close()
     for j in range(len(a)):
         text += a[j][0] + '+' + a[j][1] + '/'
 ```
-위 코드가 형태소 분석이 들어간 코드이다.<br>
+위 코드가 형태소 분석을 하는 코드이다.<br>
 ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
 이런 식으로 만들어주는 코드이다.<br>
 그 후 DB 에는
@@ -102,7 +103,80 @@ with conn.cursor() as cursor:
     cursor.execute(sql)
     result = cursor.fetchall()
 ```
-위 코드로 
+위 코드로 DB에 담겨있는 형태소 분석한것을 가져온다.<br>
+<br>
+이제 내가 메세지를 보냈을 때 반응하는 코드를 짜준다.
+```
+@client.event
+async def on_message(message):
+    print(message)  # 로그 성 출력
+    if message.author.bot:  # 봇이 메세지를 보냈다면..
+        return None  # 걍 무시.
+    if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+        await message.channel.send('안녕')
+    pos = kkma.pos(message.content)
+    text = ''
+    for i in range(len(pos)):
+        text += pos[i][0] + '+' + pos[i][1] + '/'
+    for b in result:
+        if text.startswith(b[0]): # 만약 해당 메시지가 ~~으로 시작하는 경우에는
+            if b[1] == '-2':
+                await message.channel.send('기분이 많이 좋지 않네요')
+            elif b[1] == '-1':
+                await message.channel.send('기분이 좋지 않네요')
+            elif b[1] == '0':
+                await message.channel.send('기분이 나쁘진 않네요')
+            elif b[1] == '1':
+                await message.channel.send('기분이 좋네요')
+            elif b[1] == '2':
+                await message.channel.send('기분이 많이 좋네요')
+            break
+            # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
+```
+아래와 같이 시작한다.
+```
+@client.event
+async def on_message(message):
+print(message)  # 로그 성 출력
+```
+<ol>
+  <li>봇이 여러개일때 말이 꼬일 수 있으므로 아래와 같은 코드를 넣어준다.
+    
+```
+if message.author.bot:  # 봇이 메세지를 보냈다면..
+        return None  # 걍 무시.
+```
+</li>
+  <li> 내가 보낸 말도 형태소 분석을 해준다.
+  
+  ```
+  if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+        await message.channel.send('안녕')
+    pos = kkma.pos(message.content)
+    text = ''
+    for i in range(len(pos)):
+        text += pos[i][0] + '+' + pos[i][1] + '/'
+  ```
+  </li>
+<li> 내가 보낸 메시지와 하나하나 비교하여 맞는 것을 찾은 뒤 숫자에 맞는 기분을 출력한다.
+  
+  ```
+      for b in result:
+        if text.startswith(b[0]): # 만약 해당 메시지가 ~~으로 시작하는 경우에는
+            if b[1] == '-2':
+                await message.channel.send('기분이 많이 좋지 않네요')
+            elif b[1] == '-1':
+                await message.channel.send('기분이 좋지 않네요')
+            elif b[1] == '0':
+                await message.channel.send('기분이 나쁘진 않네요')
+            elif b[1] == '1':
+                await message.channel.send('기분이 좋네요')
+            elif b[1] == '2':
+                await message.channel.send('기분이 많이 좋네요')
+            break
+  ```
+  </li>
+
 
 --- 
 
