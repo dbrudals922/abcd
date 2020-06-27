@@ -47,6 +47,8 @@ for i in data:
 
 conn.close()
 ```
+저는 [kkma 형태소 분석기](http://kkma.snu.ac.kr/documents/){: target="_ blank"}를 사용 하였습니다.
+자세한 내용은 들어가보셔서 확인하시면 좋을 거 같습니다.
 
 ```
     a = kkma.pos(b[0])
@@ -59,7 +61,7 @@ ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
 이런 식으로 만들어주는 코드이다.<br>
 그 후 DB 에는
 ![emotion DB](/images/emotion db.jpg){: width="500"}
-이런식으로 들어간다. 이것도 하나의 예시일 뿐!
+이런식으로 들어간다. DB 코드 부분은 본인이 사용하고 계신 걸로 작성하셔서 하시면 됩니다.
 
 
 ## STEP 2. 빠밤
@@ -71,7 +73,7 @@ import discord
 client = discord.Client()
 
 # 디스코드에서 생성된 토큰을 여기에 추가
-token = "NjYzMjgzODYxMTUyNTk1OTkz.XhGR3g.GubjRZ-9njci3CUCoasIFj02mmU"
+token = ""
 
 # 아래는 봇이 구동되었을 때 동작하는 부분
 @client.event
@@ -94,6 +96,7 @@ async def on_message(message):
 
 client.run(token)
 ```
+token부분에는 How to make discord bot에 고이 모셔두라고 했던 그것을 넣으시면 됩니다.
 
 ## STEP 3.
 이제 코드를 한부분 한부분 작성해나가면 된다.<br>
@@ -106,39 +109,7 @@ with conn.cursor() as cursor:
 위 코드로 DB에 담겨있는 형태소 분석한것을 가져온다.<br>
 <br>
 이제 내가 메세지를 보냈을 때 반응하는 코드를 짜준다.
-```
-@client.event
-async def on_message(message):
-    print(message)  # 로그 성 출력
-    if message.author.bot:  # 봇이 메세지를 보냈다면..
-        return None  # 걍 무시.
-    if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
-        await message.channel.send('안녕')
-    pos = kkma.pos(message.content)
-    text = ''
-    for i in range(len(pos)):
-        text += pos[i][0] + '+' + pos[i][1] + '/'
-    for b in result:
-        if text.startswith(b[0]): # 만약 해당 메시지가 ~~으로 시작하는 경우에는
-            if b[1] == '-2':
-                await message.channel.send('기분이 많이 좋지 않네요')
-            elif b[1] == '-1':
-                await message.channel.send('기분이 좋지 않네요')
-            elif b[1] == '0':
-                await message.channel.send('기분이 나쁘진 않네요')
-            elif b[1] == '1':
-                await message.channel.send('기분이 좋네요')
-            elif b[1] == '2':
-                await message.channel.send('기분이 많이 좋네요')
-            break
-            # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
-```
-아래와 같이 시작한다.
-```
-@client.event
-async def on_message(message):
-print(message)  # 로그 성 출력
-```
+
 <ol>
   
   <li>봇이 여러개일때 말이 꼬일 수 있으므로 아래와 같은 코드를 넣어준다.
@@ -177,6 +148,66 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
             break
   ```
   </li>
+
+## 마지막
+그래서 완성한 코드는
+```
+import discord
+import pymysql.cursors
+from konlpy.tag import Kkma
+
+client = discord.Client()
+
+
+# 디스코드에서 생성된 토큰을 여기에 추가
+token = ""
+
+kkma = Kkma()
+
+# 아래는 봇이 구동되었을 때 동작하는 부분
+@client.event
+async def on_ready():
+    print("Logged in as ")  # 봇의 아이디, 닉네임이 출력
+    print("")
+    print("")
+
+with conn.cursor() as cursor:
+    sql = "select test, polarity from discord_emotion"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+
+# 봇이 새로운 메시지를 수신했을때 동작하는 부분
+@client.event
+async def on_message(message):
+    print(message)  # 로그 성 출력
+    text = ''
+    if message.author.bot:  # 봇이 메세지를 보냈다면..
+        return None  # 걍 무시.
+    if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+        await message.channel.send('안녕')
+    pos = kkma.pos(message.content)
+    for i in range(len(pos)):
+        text += pos[i][0] + '+' + pos[i][1] + '/'
+    for b in result:
+        if text.startswith(b[0]): # 만약 해당 메시지가 ~~으로 시작하는 경우에는
+            if b[1] == '-2':
+                await message.channel.send('기분이 많이 좋지 않네요')
+            elif b[1] == '-1':
+                await message.channel.send('기분이 좋지 않네요')
+            elif b[1] == '0':
+                await message.channel.send('기분이 나쁘진 않네요')
+            elif b[1] == '1':
+                await message.channel.send('기분이 좋네요')
+            elif b[1] == '2':
+                await message.channel.send('기분이 많이 좋네요')
+            break
+            # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
+
+client.run(token)
+
+conn.close()
+```
+참고해서 본인만의 스타일로 다시 코드를 작성해도 좋을 것 같습니다.
 
 
 --- 
