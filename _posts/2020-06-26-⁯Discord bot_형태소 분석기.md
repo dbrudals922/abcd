@@ -116,7 +116,6 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
 ```
 위 코드는 봇이 여러 개일때 반응하는 것을 막기 위해 작성한 코드입니다.
 
-<ol>
   <li> 내가 보낸 말을 형태소 분석을 해준다.</li>
   
   ```
@@ -144,8 +143,7 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
             elif b[1] == '2':
                 await message.channel.send('기분이 많이 좋네요')
             break
-  ```
-</ol>
+```
 
 
 ## 마지막
