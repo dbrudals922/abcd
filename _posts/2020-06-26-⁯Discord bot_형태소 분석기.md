@@ -16,6 +16,34 @@ share: true
 
 ## STEP 1. 빠밤
 python에서 아래 코드를 기본으로 코딩할것이다.
+```import discord
+
+client = discord.Client()
+
+# 디스코드에서 생성된 토큰을 여기에 추가
+token = "NjYzMjgzODYxMTUyNTk1OTkz.XhGR3g.GubjRZ-9njci3CUCoasIFj02mmU"
+
+# 아래는 봇이 구동되었을 때 동작하는 부분
+@client.event
+async def on_ready():
+    print("Logged in as ")  # 봇의 아이디, 닉네임이 출력
+    print(client.user.name)
+    print(client.user.id)
+
+
+# 봇이 새로운 메시지를 수신했을때 동작하는 부분
+@client.event
+async def on_message(message):
+    print(message)  # 로그 성 출력
+
+    if message.author.bot:  # 봇이 메세지를 보냈다면..
+        return None  # 걍 무시.
+    if message.content.startswith('!안녕'):  # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
+        # await client.send_message(channel, '안녕') #봇은 해당 채널에 '안녕' 이 라고 말합니다.
+        await message.channel.send('안녕')
+
+client.run(token)```
+
 
 --- 
 
