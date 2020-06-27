@@ -57,7 +57,7 @@ conn.close()
 ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
 이런 식으로 만들어주는 코드이다.<br>
 그 후 DB 에는
-![emotion DB](/images/emotion db.jpg/700x300)
+![emotion DB](/images/emotion db.jpg){: width="500"}
 이런식으로 들어간다. 이것도 하나의 예시일 뿐!
 
 
