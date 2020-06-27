@@ -9,14 +9,14 @@ share: true
 
 ---
 
-이 글은 저번 글 How to make discord bot에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만들어보겠습니다.<br>
-시작 전 [지난 글](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/)을 참고하여 디스코드 봇을 만들어 오세요~
+이 글은 저번 글 [How to make discord bot](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/)에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만들어보겠습니다.<br>
+봇을 아직 만들지 않으셨다면 위에 링크를 눌러 만들고 오세요~
 
 --- 
 
 ## STEP 1. 빠밤
 먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
-아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게 본인 스퇄대로 하시면 되용~
+아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하시면 돼용~
 ```
 import pymysql.cursors
 import json
