@@ -47,6 +47,17 @@ for i in data:
 conn.close()
 ```
 
+```
+    a = kkma.pos(b[0])
+    text = ''
+    for j in range(len(a)):
+        text += a[j][0] + '+' + a[j][1] + '/'
+```
+위 코드가 형태소 분석이 들어간 코드이다.<br>
+ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
+이런 식으로 만들어주는 코드이다.<br>
+그 후 DB 에는
+![emotion DB](
 
 
 ## STEP 2. 빠밤
@@ -81,6 +92,16 @@ async def on_message(message):
 
 client.run(token)
 ```
+
+## STEP 3.
+이제 코드를 한부분 한부분 작성해나가면 된다.<br>
+```
+with conn.cursor() as cursor:
+    sql = "select test, polarity from discord_emotion"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+```
+위 코드로 
 
 --- 
 
