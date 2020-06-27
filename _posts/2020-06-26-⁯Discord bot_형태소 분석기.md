@@ -16,7 +16,7 @@ share: true
 
 ## STEP 1. 빠밤
 먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
-아래 코드를 참고 해서 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 된다.<br>
+아래 코드를 참고 해서 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 됩니다.<br>
 감정사전에 polarity는 기분이 좋고, 나쁨을 나타낸다. 숫자가 크면 클수록 기분이 좋음을 나타낸다.
 ```
 import pymysql.cursors
@@ -56,17 +56,17 @@ conn.close()
     for j in range(len(a)):
         text += a[j][0] + '+' + a[j][1] + '/'
 ```
-위 코드가 형태소 분석을 하는 코드이다.<br>
+위 코드가 형태소 분석을 하는 코드입니다..<br>
 ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
-이런 식으로 만들어주는 코드이다.<br>
+저는 예시와 같이 만들어 DB에 넣어주겠습니다.<br>
 그 후 DB 에는
 ![emotion DB](/images/emotion db.jpg){: width="500"}
-이런식으로 들어간다. DB 코드 부분은 본인이 사용하고 계신 걸로 작성하셔서 하시면 됩니다.
+이런식으로 들어갑니다. DB 코드 부분은 본인이 사용하고 계신 걸로 작성하셔서 하시면 될것같습니다~
 
 
 ## STEP 2. 빠밤
 
-python에서 아래 코드를 기본으로 코딩할것이다.
+python에서 아래 코드를 기본으로 코딩하겠습니다.
 ```
 import discord
 
@@ -99,14 +99,14 @@ client.run(token)
 token부분에는 How to make discord bot에 고이 모셔두라고 했던 그것을 넣으시면 됩니다.
 
 ## STEP 3.
-이제 코드를 한부분 한부분 작성해나가면 된다.<br>
+이제 코드를 한부분 한부분 작성해나가면 됩니다.<br>
 ```
 with conn.cursor() as cursor:
     sql = "select test, polarity from discord_emotion"
     cursor.execute(sql)
     result = cursor.fetchall()
 ```
-위 코드로 DB에 담겨있는 형태소 분석한것을 가져온다.<br>
+위 코드로 DB에 담겨있는 형태소 분석한것을 가져옵니다.<br>
 <br>
 이제 내가 메세지를 보냈을 때 반응하는 코드를 짜준다.
 
@@ -118,6 +118,7 @@ with conn.cursor() as cursor:
 if message.author.bot:  # 봇이 메세지를 보냈다면..
         return None  # 걍 무시.
 ```
+
 </li>
   <li> 내가 보낸 말도 형태소 분석을 해준다.
   
@@ -129,6 +130,7 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
     for i in range(len(pos)):
         text += pos[i][0] + '+' + pos[i][1] + '/'
   ```
+  
   </li>
 <li> 내가 보낸 메시지와 하나하나 비교하여 맞는 것을 찾은 뒤 숫자에 맞는 기분을 출력한다.
   
@@ -147,6 +149,7 @@ if message.author.bot:  # 봇이 메세지를 보냈다면..
                 await message.channel.send('기분이 많이 좋네요')
             break
   ```
+  
   </li>
 
 ## 마지막
