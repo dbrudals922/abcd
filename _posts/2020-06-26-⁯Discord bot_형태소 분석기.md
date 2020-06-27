@@ -22,9 +22,10 @@ share: true
 import pymysql.cursors
 import json
 import requests
-from konlpy.tag import Kkma 
+from konlpy.tag import Kkma
 
 kkma = Kkma()
+
 
 conn = pymysql.connect(host='',
                        user="",
@@ -36,7 +37,7 @@ response2 = requests.get('https://raw.githubusercontent.com/park1200656/KnuSenti
 data = json.loads(response2.text)
 
 for i in data:
-    a = kkma.pos(b[0])
+    a = kkma.pos(i["word"])
     text = ''
     for j in range(len(a)):
         text += a[j][0] + '+' + a[j][1] + '/'
