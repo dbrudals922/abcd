@@ -18,7 +18,7 @@ share: true
 먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
 아래 코드를 참고 해서 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 됩니다.<br>
 감정사전에 polarity는 기분이 좋고, 나쁨을 나타낸다. 숫자가 크면 클수록 기분이 좋음을 나타낸다.
-```
+```python
 import pymysql.cursors
 import json
 import requests
@@ -68,7 +68,7 @@ ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
 ## STEP 2. 빠밤
 
 python에서 아래 코드를 기본으로 코딩하겠습니다.
-```
+```py
 import discord
 
 client = discord.Client()
