@@ -192,8 +192,8 @@ client.run(token)
             break
 ```
 
-## 마지막~~ 
-그래서 완성한 코드는
+## 마지막~~ 빠라빠라밤
+그래서 완성한 코드는 ↓
 
 ```
 import discord
