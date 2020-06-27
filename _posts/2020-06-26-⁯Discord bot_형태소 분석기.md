@@ -16,7 +16,7 @@ share: true
 
 ## STEP 1. 빠밤
 먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
-아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 된다.
+아래 코드를 참고 해서 본인이 사용하고 계신 것과 맞게, 본인 스타일대로 하면 된다.<br>
 감정사전에 polarity는 기분이 좋고, 나쁨을 나타낸다. 숫자가 크면 클수록 기분이 좋음을 나타낸다.
 ```
 import pymysql.cursors
