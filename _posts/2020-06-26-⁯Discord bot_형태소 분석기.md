@@ -53,7 +53,7 @@ conn.close()
 저는 [kkma 형태소 분석기](http://kkma.snu.ac.kr/documents/){: target="_ blank"}를 사용 하였습니다.
 자세한 내용은 들어가보셔서 확인하시면 좋을 거 같습니다.
 
-```
+```python
     a = kkma.pos(b[0])
     text = ''
     for j in range(len(a)):
@@ -72,7 +72,7 @@ ex)가격+NNG/이+JKS/싸+VV/다+EFN/<br>
 
 python에서 아래 코드를 기본으로 코딩하겠습니다.
 
-```py
+```python
 import discord
 
 client = discord.Client()
@@ -105,7 +105,7 @@ token부분에는 How to make discord bot에 고이 모셔두라고 했던 그�
 ## STEP 3. 
 이제 코드를 한부분 한부분 작성해나가면 됩니다.<br>
 
-```
+```python
 with conn.cursor() as cursor:
     sql = "select test, polarity from discord_emotion"
     cursor.execute(sql)
@@ -119,21 +119,21 @@ with conn.cursor() as cursor:
 
 <li>봇이 여러 개일때 반응하는 것을 막기 위해 작성한 코드입니다.</li>
 
-```
+```python
 if message.author.bot:  # 봇이 메세지를 보냈다면..
         return None  # 걍 무시.
 ```
 
 <li> 테스트 차원으로 아래와 같은 코드를 넣어준다.</li>
 
-```
+```python
 if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
     await message.channel.send('안녕')
 ```
 
 지금 아래의 코드를 실행해서 본인의 봇이 '안녕'이라고 말을 하는지 체크해본다.
 
-```
+```python
 import discord
 
 client = discord.Client()
@@ -165,7 +165,7 @@ client.run(token)
 
 <li>내가 보낸 말을 형태소 분석한다.</li>
 
-  ```
+  ```python
   if message.content.startswith('!안녕'): # 만약 해당 메시지가 '!안녕' 으로 시작하는 경우에는
         await message.channel.send('안녕')
     pos = kkma.pos(message.content)
@@ -176,7 +176,7 @@ client.run(token)
   
 <li>내가 보낸 메시지와 하나하나 비교하여 맞는 것을 찾은 뒤 숫자에 맞는 기분을 출력한다.</li>
   
-  ```
+  ```python
       for b in result:
         if text.startswith(b[0]): # 만약 해당 메시지가 ~~으로 시작하는 경우에는
             if b[1] == '-2':
@@ -192,7 +192,7 @@ client.run(token)
             break
 ```
 
-## 마지막~~
+## 마지막~~ 
 그래서 완성한 코드는
 
 ```
@@ -256,5 +256,3 @@ conn.close()
 
 
 --- 
-
-이 문서는 [한글 Lorem Ipsum](http://guny.kr/stuff/klorem/)으로 생성되었습니다.
