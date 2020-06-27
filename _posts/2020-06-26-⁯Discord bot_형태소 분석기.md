@@ -15,6 +15,42 @@ share: true
 --- 
 
 ## STEP 1. 빠밤
+먼저, [감정사전](https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json)을 DB에 담아준다.<br>
+아래 코드를 참고만 하시어 본인이 사용하고 계신 것과 맞게 본인 스퇄대로 하시면 되용~
+```
+import pymysql.cursors
+import json
+import requests
+from konlpy.tag import Kkma 
+
+kkma = Kkma()
+
+conn = pymysql.connect(host='dev-swh.ga',
+                       user="root",
+                       password="swhacademy!",
+                       db="k_min",
+                       charset='utf8')
+
+response2 = requests.get('https://raw.githubusercontent.com/park1200656/KnuSentiLex/master/data/SentiWord_info.json')
+data = json.loads(response2.text)
+
+for i in data:
+    a = kkma.pos(b[0])
+    text = ''
+    for j in range(len(a)):
+        text += a[j][0] + '+' + a[j][1] + '/'
+    with conn.cursor() as cursor:
+        sql = 'INSERT INTO discord_emotion (word, word_root, polarity, test) VALUES (%s, %s, %s, %s)'
+        cursor.execute(sql, (i["word"], i["word_root"], i["polarity"], text))
+    conn.commit()
+
+conn.close()
+```
+
+
+
+## STEP 2. 빠밤
+
 python에서 아래 코드를 기본으로 코딩할것이다.
 ```
 import discord
@@ -45,7 +81,6 @@ async def on_message(message):
 
 client.run(token)
 ```
-
 
 --- 
 
