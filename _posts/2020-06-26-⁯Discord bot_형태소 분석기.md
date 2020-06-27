@@ -16,7 +16,8 @@ share: true
 
 ## STEP 1. 빠밤
 python에서 아래 코드를 기본으로 코딩할것이다.
-```import discord
+```
+import discord
 
 client = discord.Client()
 
