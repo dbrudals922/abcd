@@ -57,5 +57,3 @@ STEP 5 에서 복사한 그 주소를 브라우저 주소창에 붙여넣기한�
 
 
 --- 
-
-이 문서는 [한글 Lorem Ipsum](http://guny.kr/stuff/klorem/)으로 생성되었습니다.
