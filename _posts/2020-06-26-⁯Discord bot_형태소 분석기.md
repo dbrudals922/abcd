@@ -97,7 +97,7 @@ client.run(token)
 ```
 token부분에는 How to make discord bot에 고이 모셔두라고 했던 그것을 넣으시면 됩니다.
 
-## STEP 3.
+## STEP 3. 
 이제 코드를 한부분 한부분 작성해나가면 됩니다.<br>
 ```
 with conn.cursor() as cursor:
@@ -179,7 +179,7 @@ client.run(token)
 ```
 
 
-## 마지막
+## 마지막~~
 그래서 완성한 코드는
 ```
 import discord
