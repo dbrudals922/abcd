@@ -9,8 +9,7 @@ share: true
 
 ---
 
-이 글은 저번 글 [How to make discord bot](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/){: target=" _ blank"}에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만들어보겠습니다.<br>
-봇을 아직 만들지 않으셨다면 위에 링크를 눌러 만들고 오세요~
+디스코드 만드는 법 [How to make discord bot](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/){: target=" _ blank"}에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만드는 글입니다.<br>
 
 --- 
 
