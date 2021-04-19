@@ -9,7 +9,7 @@ share: true
 
 ---
 
-디스코드 만드는 법 [How to make discord bot](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/){: target=" _ blank"}에 이어서<br>형태소 분석기로 내 감정을 알려주는 봇을 만드는 글입니다.<br>
+[How to make discord bot](https://dbrudals.github.io/2020-06-26/How-to-make-discord-bot/){: target=" _ blank"}에 이어서<br>형태소 분석기를 이용해 내 감정을 알려주는 디스코드 봇을 만드는 글입니다.<br>
 
 --- 
 
