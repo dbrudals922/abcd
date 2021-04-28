@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "LinkedList 코드 설명"
-tags: [java, LinkedList]
+tags: [java]
 comments: true
 ---
 
