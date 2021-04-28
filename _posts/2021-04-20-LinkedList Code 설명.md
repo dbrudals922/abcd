@@ -11,7 +11,7 @@ comments: true
 ---
 
 ## 1. Node 코드
-```
+```java
 public class Node {
 	public int data; // 변수 생성
 	public Node next; // 변수 생성
