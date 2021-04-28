@@ -17,7 +17,7 @@ public class Node {
 	public Node next;
 
 	public Node(int data) { // 생성자
-		this.data = data; // 
+		this.data = data; // 값 지정
 	}
 
 	public void print() {
