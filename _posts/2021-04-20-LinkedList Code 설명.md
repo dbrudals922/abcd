@@ -12,6 +12,19 @@ comments: true
 
 ## 1. Node 코드
 
+```public class Node {
+	public int data; // 변수 생성
+	public Node next; // 변수 생성
+
+	public Node(int data) {
+		this.data = data; // 값 설정
+	}
+
+	public void print() {
+		System.out.print("{" + data + "}");  // 값 출력
+	}
+}
+```
 
 ## 7. Code Snippets
 
