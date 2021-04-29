@@ -1,8 +1,11 @@
 ---
 layout: post
 title: "LinkedList 코드 설명"
+description: "LinkedList와 관련된 코드 3개를 알아보자"
+date: 2021-04-20
 tags: [java]
 comments: true
+share: true
 ---
  
 뭔지 모르겠는 LinkedList 관련된 코드들 설명하는 글임.
