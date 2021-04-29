@@ -148,6 +148,7 @@ public class LinkedList {
 
 ```
 
+진짜 머리 터지겠음. 코드를 볼 때마다 내 한계를 느끼는중..
 ## 7. Code Snippets
 
 ### Highlighted Code Blocks
