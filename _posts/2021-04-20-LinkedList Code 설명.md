@@ -153,20 +153,3 @@ public class LinkedList {
 그래그래 그런거지.. 는 개뿔 나 이제 뭐하고 살까 생각중.. 그렇다고 포기하는건 아니고<br>
 근데 그냥 하는소리긴 하지만 진짜 뭐하고 살까 오늘 학교에서 꿈이 뭐냐고 진학상담카드를 주더라<br>
 근데 나 진짜 나중에 뭐하고 사냐;;
-## 7. Code Snippets
-
-### Highlighted Code Blocks
-
-```css
-#container {
-  float: left;
-  margin: 0 -240px 0 0;
-  width: 100%;
-}
-```
-
-### Standard code block
-
-    <div id="awesome">
-      <p>This is great isn't it?</p>
-    </div>
