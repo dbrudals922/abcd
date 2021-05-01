@@ -65,7 +65,7 @@ public class LinkedList {
 		head = null; // 처음 생성할때 값을 비워줌
 	}
 	public boolean isEmpty(){
-		return head == null; // 비어있는지 확인해줌
+		return head == null;
 	}
 	public Node get(int index) {
 	    Node node = head;
@@ -155,4 +155,7 @@ public class LinkedList {
 근데 나 진짜 나중에 뭐하고 사냐;;<br>
 제가 진짜 정말 노력했다는것만 알아주세요.. To 돌쌤에게 하면서 편지라도 써야되나..<br>
 하 증말루 진짜루 제가 며칠을 몇시간씩 머리를 쥐어 뜯으며 생각 해봤다는 것을..<br>
-솔직히 난 할 수 있을 줄 알았는데.. 이게 안되니깐 자꾸 자책하게되고 그런것이여
+솔직히 난 할 수 있을 줄 알았는데.. 이게 안되니깐 자꾸 자책하게되고 그런것이여<br>
+----20210502----<br>
+증말루 이건 아니자나.. 보면 볼수록 막막하고 앞이 깜깜해 홀리<br>
+그런짓은 하지 말아야 했는데.. 난 그 사실을 몰랐어~ 이제 와서 후회하면 뭐하리
