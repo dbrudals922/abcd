@@ -1,69 +1,65 @@
 ---
 layout: post
 title: "LinkedList 코드 설명"
-description: "LinkedList와 관련된 코드 3개를 알아보자."
+description: "LinkedList 코드를 알아보자."
 date: 2021-04-20
 tags: [java]
 comments: true
 share: true
 ---
- 
-뭔지 모르겠는 LinkedList 관련된 코드들 설명하는 글임.
-어떻게 설명해야될지 모르겠음. <br>다 연관되어있어서 따로 설명하기도 그렇고 따로 끊어야할지 그냥 주석으로 쓴 코드를 통으로 올릴지 모르겠음. 악!!
+
+본격 LinkedList 코드 설명하는 글.
 
 ---
 
 
-## 1. Node 코드
-```java
-public class Node {
-	public int data;
-	public Node next;
+## LinkedList 코드★
 
-	public Node(int data) { // 생성자
-		this.data = data; // 값 지정
-	}
-
-	public void print() {
-		System.out.print("{" + data + "}");  // 값 출력
-	}
-}
-```
-
-## 2. LinkedListMain 코드
-```java
-public class LinkedListMain {
-	public static void main(String[] args) {
-		LinkedList linkedList = new LinkedList(); // 객체 생성
-		linkedList.addLast(1); // 리스트 맨 마지막에 값 추가
-		linkedList.addLast(2);
-		linkedList.addLast(3);
-		linkedList.addLast(4);
-		linkedList.addLast(5);
-		linkedList.add(2, 8); // 위치, 값 순서로 원하는 위치에 값을 추가
-		linkedList.delete(4); // 그 위치에 값을 삭제
-		linkedList.addFirst(0); // 값을 맨 앞에 추가 
-		while(!linkedList.isEmpty()) { // 리스트가 비어있지 않다면
-			Node delLink = linkedList.deleteFirst(); // 맨 앞에 있는 요소 삭제
-			delLink.print(); // 리스트 프린트
-			System.out.println(); // 빈줄
-		}
-	}
-}
-```
-
-## 3. LinkedList 코드★
 ```java
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
 public class LinkedList {
 	private Node head;
 
+```
+여기까진 그냥 기본<br>
+맨 처음 head 변수 만들어줌 <br>
+
+``` java
 	public LinkedList(){
-		head = null; // 처음 생성할때 값을 비워줌
+		head = null;
 	}
+``` 
+맨 처음에는 리스트 비워줌
+
+맨 앞에 값을 넣어주는 메소드 작성
+``` java
+	public void addFirst(int value){
+		Node link = new Node(value);
+		link.next = head;
+		head = link;
+	}
+```
+새 노드를 생성한 뒤 새로 추가하는 노드의 next를 원래 first 노드로 해줌 <br>
+새로 추가하는 노드를 first로 지정해줌
+
+``` java
+	public void addLast(int value){
+		Node link = new Node(value);
+
+		//	마지막까지 보내는 구문
+		Node tmpLink = head;
+		Node lastLink = null;
+		while(tmpLink != null) {
+			lastLink = tmpLink;
+			tmpLink = tmpLink.next;
+		}
+		if(lastLink == null) head = link;
+		else lastLink.next = link;
+	}
+```
+```
 	public boolean isEmpty(){
 		return head == null;
 	}
