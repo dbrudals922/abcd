@@ -34,6 +34,7 @@ public class LinkedList {
 맨 처음에는 리스트 비워줌
 <br>
 <br>
+<br>
 값을 맨 앞에 넣어주는 메소드
 ``` java
 	public void addFirst(int value){
@@ -42,11 +43,14 @@ public class LinkedList {
 		head = link;
 	}
 ```
+<br>
 새 노드를 생성한 뒤 새로 추가하는 노드의 next를 원래 first 노드로 해줌 <br>
 그리고 새로 추가하는 노드를 first로 지정해줌<br>
 <br>
 <br>
+<br>
 값을 맨 뒤에 넣어주는 메소드
+<br>
 ``` java
 	public void addLast(int value){
 		Node link = new Node(value);
@@ -62,12 +66,50 @@ public class LinkedList {
 		else lastLink.next = link;
 	}
 ```
+<br>
 link가 새로 추가하는 노드라는 건 동일<br>
 tmpLink를 first 노드로, lastLink는 null로<br>
 만약 리스트에 값이 있었다면<br>
-lastLink를 tmpLink로 tmpLink를 그 다음 노드로 지정해주며 한단계씩 앞으로 전진함.<br>
-그래서 lastLink(마지막 null직전의 노드)의 next를 새로 추가하는 노드로 지정<br>
-만약 리스트에 값이 없었다면 그냥 새로 추가하는 노드를 first로 지정<br>
+lastLink를 tmpLink로, tmpLink를 그 다음 노드로 지정해주며 한단계씩 앞으로 전진함.<br>
+**그러면 결국 tmpLink는 맨 마지막 null 까지 가게되고, lastLink는 null 바로 앞 노드의 값이 저장되어있음**<br>
+그래서 lastLink의 next를 새로 추가하는 노드로 지정<br>
+만약 리스트에 값이 없었다면 그냥 새로 추가하는 노드를 first로 지정
+<br>
+<br>
+<br>
+원하는 위치의 값을 가져오는 메소드
+```java
+	public Node get(int index) {
+	    Node node = head;
+	    for (int i = 0; i < index; i++)
+	        node = node.next;
+	    return node; // 리턴
+	}
+```
+<br>
+맨 처음 노드부터 index 번째 노드까지 for문으로 값을 가져옴
+<br>
+<br>
+<br>
+원하는 위치에 값을 저장하는 메소드
+```java
+	public void add(int index, int value){
+		// index가 0이면 첫번째 노드에 추가
+		if(index == 0){
+			addFirst(value);
+		} else {
+			Node previosNode = get(index-1);	//	추가할 인덱스 앞 요소(이전노드)
+			Node nextNode = previosNode.next;	//	이전노드의 링크 노드는 새로운 노드의 링크가 되어야 함
+			Node newNode = new Node(value);
+			previosNode.next = newNode;		//	이전노드의 링크 노드는 새로운 노드
+			newNode.next = nextNode;		//	새로운 노드의 링크는 이전노드가 가르켰던 노드
+		}
+	}
+```
+<br>
+추가할 인덱스 앞 노드의 next를 새로 추가한 노드로, 새로운 노드의 next를 이전노드의 next로 바꾸는 작업 필요<br>
+newNode 변수에 새로운 노드를 저장한후 previosNode의 next값으로 지정, newNode의 next를 preiviosNode의 원래 next로 지정<br>
+간단하쥬? *tktlf gkskeh dksrkseksgka.. wnrdmfrjrkxdma..*
 
 ```
 	public boolean isEmpty(){
