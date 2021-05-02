@@ -111,6 +111,7 @@ lastLink를 tmpLink로, tmpLink를 그 다음 노드로 지정해주며 한단�
 newNode 변수에 새로운 노드를 저장한후 previosNode의 next값으로 지정, newNode의 next를 preiviosNode의 원래 next로 지정<br>
 간단하쥬? *tktlf gkskeh dksrkseksgka.. wnrdmfrjrkxdma..*
 
+내일하자ㅏ..
 ```
 	public boolean isEmpty(){
 		return head == null;
