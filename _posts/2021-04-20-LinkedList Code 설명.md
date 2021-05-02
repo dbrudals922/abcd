@@ -32,8 +32,9 @@ public class LinkedList {
 	}
 ``` 
 맨 처음에는 리스트 비워줌
-
-맨 앞에 값을 넣어주는 메소드 작성
+<br>
+<br>
+값을 맨 앞에 넣어주는 메소드
 ``` java
 	public void addFirst(int value){
 		Node link = new Node(value);
@@ -42,8 +43,10 @@ public class LinkedList {
 	}
 ```
 새 노드를 생성한 뒤 새로 추가하는 노드의 next를 원래 first 노드로 해줌 <br>
-새로 추가하는 노드를 first로 지정해줌
-
+그리고 새로 추가하는 노드를 first로 지정해줌<br>
+<br>
+<br>
+값을 맨 뒤에 넣어주는 메소드
 ``` java
 	public void addLast(int value){
 		Node link = new Node(value);
@@ -59,6 +62,13 @@ public class LinkedList {
 		else lastLink.next = link;
 	}
 ```
+link가 새로 추가하는 노드라는 건 동일<br>
+tmpLink 변수를 맨 처음 노드로 지정, lastLink는 null<br>
+만약 리스트에 값이 있었다면<br>
+lastLink를 tmpLink로 tmpLink를 그 다음 노드로 지정해주며 한단계씩 앞으로 전진함.<br>
+그래서 lastLink(마지막 null직전의 노드)의 next를 새로 추가하는 노드로 지정<br>
+만약 리스트에 값이 없었다면 그냥 새로 추가하는 노드를 first로 지정<br>
+
 ```
 	public boolean isEmpty(){
 		return head == null;
