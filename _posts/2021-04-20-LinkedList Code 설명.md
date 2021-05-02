@@ -63,7 +63,7 @@ public class LinkedList {
 	}
 ```
 link가 새로 추가하는 노드라는 건 동일<br>
-tmpLink 변수를 맨 처음 노드로 지정, lastLink는 null<br>
+tmpLink를 first 노드로, lastLink는 null로<br>
 만약 리스트에 값이 있었다면<br>
 lastLink를 tmpLink로 tmpLink를 그 다음 노드로 지정해주며 한단계씩 앞으로 전진함.<br>
 그래서 lastLink(마지막 null직전의 노드)의 next를 새로 추가하는 노드로 지정<br>
