@@ -301,3 +301,5 @@ public class LinkedList {
 }
 
 ```
+
+*tktlf wha vhrlgoTek..*
