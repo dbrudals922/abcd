@@ -112,7 +112,7 @@ newNode 변수에 새로운 노드를 저장한후 previosNode의 next값으로 
 간단하쥬? *tktlf gkskeh dksrkseksgka.. wnrdmfrjrkxdma..*
 
 내일하자ㅏ..
-```
+```java
 	public boolean isEmpty(){
 		return head == null;
 	}
