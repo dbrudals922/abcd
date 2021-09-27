@@ -7,8 +7,11 @@ tags: [java]
 comments: true
 share: true
 ---
+
+
+
 파란색 = 피드백
----
+
 <br>
 ![image](/images/Discordbot_schedule_before/1.jpg)
 <br>
