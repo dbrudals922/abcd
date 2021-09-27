@@ -8,7 +8,4 @@ comments: true
 share: true
 ---
 
-<br>
-글쎄 진짜 어렵더라..
 
----
