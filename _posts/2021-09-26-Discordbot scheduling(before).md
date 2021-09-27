@@ -8,7 +8,7 @@ comments: true
 share: true
 ---
 
-<span style="color:blue">파란색</span>
+파란색 = 피드백
 <br>
 ![image](/images/Discordbot_schedule_before/1.jpg)
 <br>
