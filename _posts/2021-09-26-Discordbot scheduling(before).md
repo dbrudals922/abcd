@@ -7,7 +7,8 @@ tags: [java]
 comments: true
 share: true
 ---
-<span style="color:blue">파란색</span> = 피드백.
+
+<span style="color:blue">파란색</span>
 <br>
 ![image](/images/Discordbot_schedule_before/1.jpg)
 <br>
