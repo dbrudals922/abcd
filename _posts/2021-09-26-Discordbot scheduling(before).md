@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "디스코드봇 스케줄링 ppt "
+title: "디스코드봇 스케줄링 ppt(before) "
 description: "내 파트 소개"
 date: 2021-09-27
 tags: [java]
