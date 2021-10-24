@@ -2,8 +2,8 @@
 layout: post
 title: "[Python]감정을 알려주는 Discord bot 만들기"
 description: "python으로 내 감정을 알려주는 디스코드 봇을 만들어보자."
-date: 2020-06-26
-tags: [디스코드, 형태소 분석기, python]
+date: 2021-10-24
+tags: [java, quartz]
 comments: true
 share: true
 
