@@ -13,7 +13,7 @@ rabbitmq를 이용해서 파일을 보내봤다. 근데 이제 파일 모니터�
 
 --- 
 
-WatchService in java <br>
+아래의 파일 모니터링 코드를 사용함. <br>
 ```java
 package com.swh.rabbitmq.project;
 
@@ -32,7 +32,7 @@ public class WatchDirectory {
 		WatchService watchService
 		= FileSystems.getDefault().newWatchService();
 
-		Path path = Paths.get(System.getProperty("user.home"));
+		Path path = Paths.get(System.getProperty("감시할 폴더경로"));
 
 		path.register(
 				watchService, 
@@ -52,5 +52,7 @@ public class WatchDirectory {
 	}
 }
 ```
+<br>
+
 
 --- 
